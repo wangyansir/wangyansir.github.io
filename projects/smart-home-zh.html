@@ -3,7 +3,7 @@
 <meta name="description" content="基于 STM32/ESP32 的用电状态识别终端，将电气波形与环境输入转换为负载状态、本地告警和继电器动作，以自适应滤波、多维特征投票及手机交互连接完整感知至处置流程。"><meta name="author" content="Haoyan Zhang"><meta property="og:type" content="website"><meta property="og:title" content="智安家居用电监测 · Haoyan Zhang"><meta property="og:description" content="基于 STM32/ESP32 的用电状态识别终端，将电气波形与环境输入转换为负载状态、本地告警和继电器动作，以自适应滤波、多维特征投票及手机交互连接完整感知至处置流程。"><meta property="og:image" content="https://wangyansir.github.io/assets/portrait.jpg">
 <link rel="canonical" href="https://wangyansir.github.io/projects/smart-home-zh.html"><link rel="alternate" hreflang="en" href="https://wangyansir.github.io/projects/smart-home.html"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <script>try{const s=localStorage.getItem('haoyan-theme');document.documentElement.dataset.theme=s||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch{document.documentElement.dataset.theme='light'}</script>
-<link rel="stylesheet" href="../style.css?v=5"><script src="../main.js?v=5" defer></script></head>
+<link rel="stylesheet" href="../assets/katex.min.css"><link rel="stylesheet" href="../style.css?v=6"><script src="../main.js?v=5" defer></script></head>
 <body class="project-page"><a class="skip-link" href="#main">跳到正文</a><main class="project-main" id="main"><nav class="project-utility" aria-label="页面导航"><a href="../zh.html#projects">主页</a><a class="language-switch" href="smart-home.html" lang="en" hreflang="en" aria-label="切换到英文">EN</a></nav>
 <header class="project-heading"><p class="project-kicker">工程项目</p><h1>智安家居：边缘用电监测与负载识别终端</h1><p class="project-authors"><a href="../zh.html">Haoyan Zhang</a></p><p class="project-affiliation">交通与电气工程学院<br>大连科技学院</p><p class="project-stage">整机原型</p><div class="project-resources"><a href="#abstract">概述</a><a href="../zh.html#projects">返回主页</a></div></header>
 <figure class="project-teaser"><a class="figure-link" href="../assets/smart-home-system.svg" target="_blank" rel="noopener" aria-label="查看原尺寸图片"><img src="../assets/smart-home-system.svg" alt="依据正式产品设计方案与使用说明书重绘的系统总览。" width="1200" height="700" fetchpriority="high"></a><figcaption>依据正式产品设计方案与使用说明书重绘的系统总览。 <a class="figure-original" href="../assets/smart-home-system.svg" target="_blank" rel="noopener">查看原图 ↗</a></figcaption></figure><nav class="section-index" aria-label="本页目录"><a href="#abstract">项目概述</a><a href="#challenge">竞赛任务</a><a href="#architecture">系统架构</a><a href="#contribution">我的工作</a><a href="#validation">原型验证</a><a href="#scope">后续迭代</a></nav>
@@ -13,7 +13,14 @@
 <p>我们的方案是具备本地负载解释与联网交互能力的用电监测终端，提交了设计方案、产品使用说明书、原型测试表、展示 PPT 及演示材料。</p></div></section>
 <section class="technical-section" id="architecture" aria-labelledby="architecture-title"><h2 id="architecture-title">系统架构</h2><div class="technical-content"><p>STM32F103C8T6 处理 16 点电压、电流窗口。韦尔福德在线统计描述均值与波动，自适应卡尔曼阶段调整测量噪声权重，五点 Savitzky–Golay 平滑抑制高频波动并保留启动形状。</p>
 <p>分类器结合运行点统计、FFT 能量、Haar 高频细节和 DTW 波形模板距离。电流快速上升与电压下降优先进入异常判断；其余样本由多种特征得分加权投票，输出无负载、灯泡或小型电机状态。</p>
-<p>OLED、LED、蜂鸣器与继电器提供本地反馈和动作。PC14 按键或手机均可启动检测，PC13 恢复等待界面。ESP32 与 STM32 交换结果摘要及启动命令，使本地处理与远程交互各自保持清晰路径。</p></div></section>
+<p>OLED、LED、蜂鸣器与继电器提供本地反馈和动作。PC14 按键或手机均可启动检测，PC13 恢复等待界面。ESP32 与 STM32 交换结果摘要及启动命令，使本地处理与远程交互各自保持清晰路径。</p><div class="technical-excerpt"><h3>实现代码节选</h3><p>代码讲解材料中自适应测量噪声更新如下：运行方差改变观测权重；该节选本身不构成性能测试。</p><div class="code-panel"><div class="code-header"><span>Adaptive Kalman update · C</span><span>Code excerpt</span></div><pre><code class="hljs language-c"><span class="hljs-function"><span class="hljs-type">float</span> <span class="hljs-title">Adaptive_Kalman_Update</span><span class="hljs-params">(KalmanFilter *kf, <span class="hljs-type">float</span> measurement, <span class="hljs-type">float</span> current_variance)</span> </span>{
+    <span class="hljs-type">float</span> dynamic_R = kf-&gt;R + (current_variance * <span class="hljs-number">0.5f</span>);
+    kf-&gt;P = kf-&gt;P + kf-&gt;Q;
+    kf-&gt;K = kf-&gt;P / (kf-&gt;P + dynamic_R);
+    kf-&gt;X = kf-&gt;X + kf-&gt;K * (measurement - kf-&gt;X);
+    kf-&gt;P = (<span class="hljs-number">1.0f</span> - kf-&gt;K) * kf-&gt;P;
+    <span class="hljs-keyword">return</span> kf-&gt;X;
+}</code></pre></div><p class="source-note">来源：提供的竞赛代码讲解，第 1–2 页。</p></div></div></section>
 <section class="technical-section" id="contribution" aria-labelledby="contribution-title"><h2 id="contribution-title">我的工作</h2><div class="technical-content"><p>我完成了嵌入式程序、原理图与 PCB 设计、硬件焊接、整机联调与问题排查，将测量处理、负载判断、本地反馈和通信接口接成完整链路。</p>
 <p>手机应用与 OpenSCAD 外壳建模使用 AI 工具辅助开发，由我完成集成与原型演示。</p></div></section>
 <section class="technical-section" id="validation" aria-labelledby="validation-title"><h2 id="validation-title">原型验证</h2><div class="technical-content"><p>提交测试表记录了五类功能演示通过：受控疑似短路识别、灯泡与电机分类、近距触发、本地与 APP 结果一致性，以及无负载状态指示。展示材料还记录了本地告警与继电器控制链路。</p>
