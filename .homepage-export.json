@@ -86,6 +86,8 @@
     "assets/portrait.jpg": "627c1aac189e1e86ca531e19b2d6a04718f1477dd865891b5bbbde135ff5de75",
     "assets/power-monitor.svg": "3b53d80e3854ee58dd084112eb6b745353385e12cad331c6860f8ec4d0b959b5",
     "assets/rail-inspection-concept.jpg": "4d413e78796a84e374472412459bb75e705bb17dd645151935302a9af48545af",
+    "assets/rail-method-en.svg": "fbfa7b2152973839c76d112e2743599d1d699a610c5be624a0764db725959d1e",
+    "assets/rail-method-zh.svg": "f154c1468861db548c6c97de8c456addbb80494bb026340f1389456f3c0e91a5",
     "assets/rail-reference-method.svg": "ec8635aa63d9c203f41fbb7b0d29161df6ebff8d41a3ba55c204bad98df8972d",
     "assets/rail-research-roadmap.svg": "96f7ee59189341e422179d738b14a270758e99b14632dc82913e2323fbbfd2bf",
     "assets/rd-pldic-author-manuscript.pdf": "a694fa572d32e1f6de48ce86545515ce9f4feeabe1b48c2f5dcc22f721d47a4b",
@@ -101,7 +103,7 @@
     "assets/zhang-haoyan-cv.pdf": "795e0ccc875ae3dad336b3c2e7e024c33958f5156479fe88226927a033059998",
     "en.html": "9868a6f6e2053cc7ae8383f66e088161f10edcf87147b7f7b9c90ecdb571e290",
     "files/rd-pldic.bib": "9cfcca4153c3b201b135144c34fb3bf977e553f6653cd9b72ea57e51d9a0bb4c",
-    "index.html": "251fa661835229e19bd0fe9d7414c6bb6bb73b65af7290baf8e0c8e1dffea973",
+    "index.html": "66ebb178eaa438c403173b07af0471783c2940acb3404c81ff5765a611e8e789",
     "main.js": "f6b091ab56e6afb05bc5ee68fbe756f0a269ae70322fe770b32151675478c80b",
     "projects/aiot-fertigation-zh.html": "7937b8fae01a89716701ead1e28e8a31d51b2f1322ac707c63e265d53c22765f",
     "projects/aiot-fertigation.html": "5cc21b92073b397aa9babfd132f6ed748b5210818aa4849912bfa7c97c288aa3",
@@ -113,9 +115,9 @@
     "publications/rd-pldic.html": "69689057d5ab75e3f753420dc3aac15fd79746de94a0b30de7387aa72d0dd48c",
     "research/dual-vector-control-zh.html": "ef3e6becefccd8426e9dd15df9dfeff63ba1b0083ad6a5510d432fa20becbb5b",
     "research/dual-vector-control.html": "a9bcc2c1b6c8e12a74f16386dba41d799e97927c8203384c822686c5b8811e5a",
-    "research/rail-inspection-zh.html": "99f723f30f55c157d39226534c1076a2634e0571bcd5fe478feb69a95cb952a3",
-    "research/rail-inspection.html": "2e284ef79f8cf3ce92159cecc94c920c588d809fec23f6aa8737801ba504d1a1",
+    "research/rail-inspection-zh.html": "20374ad51aafbf703b5dd08242f3ceb8e497faa9150ecc7b00235355f0359196",
+    "research/rail-inspection.html": "3e166bcf8e3bcd7ec069303694e52b1203edac43009884dfd3cc9ce31b4df7bf",
     "style.css": "da211e833013e389e0d4d930482a4e6e1f999a9451c79f3abfa6aed7e0529e3f",
-    "zh.html": "40832361e345954410a3473eef15b013b72605347286764c9fb3b73872013f41"
+    "zh.html": "e60900bb09643e41b9c0c27022645d80867269f3261298eb14cb11555eb2999d"
   }
 }
