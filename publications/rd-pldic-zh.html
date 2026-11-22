@@ -1,0 +1,71 @@
+<!doctype html><html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PMSM负载扰动补偿 · Haoyan Zhang</title>
+<meta name="description" content="通过正向负载估计、恢复电流映射与能量—时间门控，生成短时q轴补偿电流，研究永磁同步电机突增负载后的转速恢复过程。"><meta name="author" content="Haoyan Zhang"><meta property="og:type" content="website"><meta property="og:title" content="PMSM负载扰动补偿 · Haoyan Zhang"><meta property="og:description" content="通过正向负载估计、恢复电流映射与能量—时间门控，生成短时q轴补偿电流，研究永磁同步电机突增负载后的转速恢复过程。"><meta property="og:image" content="https://wangyansir.github.io/assets/portrait.jpg">
+<link rel="canonical" href="https://wangyansir.github.io/publications/rd-pldic-zh.html"><link rel="alternate" hreflang="en" href="https://wangyansir.github.io/publications/rd-pldic.html"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script>try{const s=localStorage.getItem('haoyan-theme');document.documentElement.dataset.theme=s||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch{document.documentElement.dataset.theme='light'}</script>
+<link rel="stylesheet" href="../style.css?v=4"><script src="../main.js?v=4" defer></script></head>
+<body class="project-page"><a class="skip-link" href="#main">跳到正文</a><main class="project-main" id="main"><nav class="project-utility" aria-label="页面导航"><a href="../zh.html#publications">主页</a><a class="language-switch" href="rd-pldic.html" lang="en" hreflang="en" aria-label="切换到英文">EN</a></nav>
+<header class="project-heading"><p class="project-kicker">PSPE 2026</p><h1>PMSM负载扰动预测迭代补偿</h1><p class="project-authors"><a href="../zh.html">Haoyan Zhang</a>, Liang Shen</p><p class="project-affiliation">交通与电气工程学院<br>大连科技学院</p><p class="project-stage">已出版 · PSPE 2026</p><div class="project-resources"><a href="https://doi.org/10.1109/PSPE71359.2026.11780839" target="_blank" rel="noopener">DOI</a><a href="../assets/rd-pldic-author-manuscript.pdf" target="_blank" rel="noopener">作者稿</a><a href="../files/rd-pldic.bib" download>BibTeX</a></div></header>
+<figure class="project-teaser"><a class="figure-link" href="../assets/rd-pldic-speed.png" target="_blank" rel="noopener" aria-label="查看原尺寸图片"><img src="../assets/rd-pldic-speed.png" alt="750 r/min、0→9 N·m增载、预测参数为名义值120%时的转速恢复仿真。© 2026 IEEE。" width="1200" height="700" fetchpriority="high"></a><figcaption>750 r/min、0→9 N·m增载、预测参数为名义值120%时的转速恢复仿真。© 2026 IEEE。 <a class="figure-original" href="../assets/rd-pldic-speed.png" target="_blank" rel="noopener">查看原图 ↗</a></figcaption></figure><nav class="section-index" aria-label="本页目录"><a href="#abstract">研究概述</a><a href="#method">方法设计</a><a href="#setup">仿真设置</a><a href="#results">仿真结果</a><a href="#limitations">适用范围与局限</a><a href="#publication">论文信息</a></nav>
+<section class="technical-section" id="abstract" aria-labelledby="abstract-title"><h2 id="abstract-title">研究概述</h2><div class="technical-content"><p>永磁同步电机突增负载后，速度环需要逐步提高产生转矩的电流，期间可能出现转速跌落和恢复缓慢。本项目在PID型有限控制集模型预测电流控制的基础上，研究面向恢复动态的负载扰动预测迭代补偿方法RD-PLDIC。</p>
+<p>该方法在q轴电流给定中加入短时修正：通过正向负载估计获取扰动信息，以恢复电流映射生成补偿需求，再利用能量—时间门控限制主要恢复阶段后的补偿。已报告结果来自正向增载仿真，在所测条件下缩短了恢复时间并降低了累计转速误差。</p></div></section>
+<section class="technical-section" id="method" aria-labelledby="method-title"><h2 id="method-title">方法设计</h2><div class="technical-content"><ol>
+<li><strong>正向负载扰动估计。</strong> 根据机械运动方程，结合电磁转矩和转速变化估计负载转矩，经低通滤波平滑后，保留用于补偿的正向增载分量。</li>
+<li><strong>恢复需求到电流的映射。</strong> 综合估计的正向负载转矩、正转速误差及误差增长趋势，生成临时q轴电流请求，支持转速向给定值恢复。</li>
+<li><strong>补偿限幅与门控。</strong> 对电流请求滤波、限幅，再依据转速误差能量和激活后的时间施加门控。最终补偿叠加到速度PI控制器的q轴电流给定，PID-FCS-MPC原有电压矢量枚举过程保持不变。</li>
+</ol>
+<figure>
+<img src="../assets/rd-pldic-control.png" alt="RD-PLDIC控制结构，包含正向负载估计、恢复电流映射、能量—时间门控和PID-FCS-MPC电流环。" loading="lazy" width="1800" height="1000">
+<figcaption>作者录用稿中的控制结构。补偿量加入q轴电流给定通道。© 2026 IEEE。</figcaption>
+</figure></div></section>
+<section class="technical-section" id="setup" aria-labelledby="setup-title"><h2 id="setup-title">仿真设置</h2><div class="technical-content"><p>主对比工况的转速给定为<strong>750 r/min</strong>，在<strong>0.30 s</strong>施加<strong>0→9 N·m</strong>负载转矩阶跃。数值电机采用名义参数，预测模型的定子电阻、d/q轴电感与永磁体磁链均取<strong>名义值的120%</strong>，即20%的预测参数失配。</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="仿真设置"><table>
+<caption>主仿真参数</caption>
+<thead><tr><th scope="col">参数</th><th scope="col">取值</th></tr></thead>
+<tbody>
+<tr><th scope="row">极对数</th><td>4</td></tr>
+<tr><th scope="row">定子电阻</th><td>1.5 Ω</td></tr>
+<tr><th scope="row">d/q轴电感</th><td>11.1 mH</td></tr>
+<tr><th scope="row">永磁体磁链</th><td>0.27 Wb</td></tr>
+<tr><th scope="row">直流母线电压</th><td>200 V</td></tr>
+<tr><th scope="row">采样周期</th><td>40 μs</td></tr>
+<tr><th scope="row">转动惯量</th><td>0.006 kg·m²</td></tr>
+<tr><th scope="row">黏性阻尼系数</th><td>0.0005 N·m·s/rad</td></tr>
+<tr><th scope="row">q轴电流给定限幅</th><td>8 A</td></tr>
+<tr><th scope="row">补偿电流限幅</th><td>1.05 A</td></tr>
+</tbody>
+</table></div>
+<p>对比对象包括传统PI控制、PID-FCS-MPC、加入扰动观测器前馈补偿的PID-FCS-MPC（DOB-FF）、无门控RD-PLDIC以及完整方法。<strong>恢复时间</strong>定义为从负载阶跃开始，到转速误差首次进入<strong>±5 r/min</strong>并在此范围内持续<strong>0.02 s</strong>所用的时间。</p></div></section>
+<section class="technical-section" id="results" aria-labelledby="results-title"><h2 id="results-title">仿真结果</h2><div class="technical-content"><p>下列指标均对应同一主工况：750 r/min、0→9 N·m负载阶跃、预测参数为名义值的120%。</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="仿真结果"><table>
+<caption>RD-PLDIC与PID-FCS-MPC的对比</caption>
+<thead><tr><th scope="col">指标</th><th scope="col">PID-FCS-MPC</th><th scope="col">RD-PLDIC</th></tr></thead>
+<tbody>
+<tr><th scope="row">最大转速跌落</th><td>229.90 r/min</td><td>190.83 r/min</td></tr>
+<tr><th scope="row">恢复时间</th><td>0.2390 s</td><td>0.1654 s</td></tr>
+<tr><th scope="row">转速IAE</th><td>17.389</td><td>11.540</td></tr>
+<tr><th scope="row">转速ITAE</th><td>1.3305</td><td>0.6391</td></tr>
+</tbody>
+</table></div>
+<p>与DOB-FF相比，稿件报告RD-PLDIC的初次转速跌落抑制效果相近，恢复时间、转速IAE和转速ITAE分别降低<strong>29.99%</strong>、<strong>19.35%</strong>和<strong>41.07%</strong>。两者的q轴电流峰值分别为<strong>7.733 A</strong>和<strong>7.721 A</strong>。</p>
+<figure>
+<img src="../assets/rd-pldic-speed.png" alt="0.30秒施加负载阶跃后，传统PI、PID-FCS-MPC、DOB-FF与RD-PLDIC在750转每分钟给定下的转速仿真对比。" loading="lazy" width="1800" height="1215">
+<figcaption>20%预测参数失配主工况下的转速响应，转载自作者录用稿。© 2026 IEEE。</figcaption>
+</figure>
+<p>门控消融进一步比较了恢复后的补偿持续情况：</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="仿真结果"><table>
+<caption>同一主工况下能量—时间门控的影响</caption>
+<thead><tr><th scope="col">指标</th><th scope="col">无门控RD-PLDIC</th><th scope="col">带门控RD-PLDIC</th></tr></thead>
+<tbody>
+<tr><th scope="row">恢复时间</th><td>0.1517 s</td><td>0.1654 s</td></tr>
+<tr><th scope="row">补偿持续时间</th><td>0.5000 s</td><td>0.0855 s</td></tr>
+<tr><th scope="row">恢复后补偿电流峰值</th><td>0.8246 A</td><td>0.0129 A</td></tr>
+</tbody>
+</table></div>
+<p>门控使恢复时间略有增加，同时显著减小主要恢复阶段后的持续补偿。</p></div></section>
+<section class="technical-section" id="limitations" aria-labelledby="limitations-title"><h2 id="limitations-title">适用范围与局限</h2><div class="technical-content"><p>当前验证范围为正向增载恢复的数值仿真，所报告改善仅适用于已测试的模型和工况，尚不能据此确认实物驱动效果或保证实际电流上界。</p>
+<p>硬件实验、目标处理器执行时间、减载、转速反转、再生制动、测量噪声敏感性及采样延迟影响仍需进一步验证。</p></div></section>
+<section class="technical-section" id="publication" aria-labelledby="publication-title"><h2 id="publication-title">论文信息</h2><div class="technical-content"><p><strong>Haoyan Zhang，Liang Shen。</strong><cite>Recovery-Dynamics-Oriented Predictive Load-Disturbance Iterative Compensation for PMSM Drives.</cite> 2026 5th International Conference on Power System and Power Engineering（PSPE），IEEE，207–210 页，2026。DOI：<a href="https://doi.org/10.1109/PSPE71359.2026.11780839" target="_blank" rel="noopener">10.1109/PSPE71359.2026.11780839</a>。</p>
+<p><strong>已收入 PSPE 2026 会议论文集。</strong>于2026年9月12日在大连作海报展示。两位作者在稿件中的署名机构均为大连科技学院交通与电气工程学院。</p>
+<p><a href="../assets/rd-pldic-author-manuscript.pdf">阅读作者录用稿（PDF）</a></p>
+<p>© 2026 IEEE。下载文件为作者录用稿，<a href="https://ieeexplore.ieee.org/document/11780839/" target="_blank" rel="noopener">正式出版版本见 IEEE Xplore</a>。</p></div></section><footer class="project-footer"><a href="../zh.html#publications">返回张昊焱的主页</a><a href="#main">返回顶部 ↑</a></footer></main></body></html>

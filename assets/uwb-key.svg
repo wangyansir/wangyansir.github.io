@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" role="img" aria-labelledby="title desc">
+  <title id="title">Dual UWB digital key concept diagram</title>
+  <desc id="desc">Concept diagram only, not a physical prototype or measured result. Two UWB anchors range to a digital key. Three schematic zones indicate access logic without actual distance boundaries.</desc>
+  <defs>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#e0dce8" stroke-width=".65"/></pattern>
+  </defs>
+  <rect width="600" height="360" fill="#f1eef3"/>
+  <rect width="600" height="360" fill="url(#grid)"/>
+  <g font-family="Arial, sans-serif" fill="#45384f">
+    <text x="32" y="44" font-size="12" letter-spacing="2.5">UWB DIGITAL KEY</text>
+    <text x="32" y="78" font-size="28" font-weight="600" letter-spacing="-.6">Distance to access.</text>
+    <text x="568" y="44" text-anchor="end" font-size="12" fill="#8b799a">04 / LOCALIZATION</text>
+  </g>
+  <g fill="none" stroke="#746086" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M117 185a183 107 0 0 0 366 0" stroke="#c8bdcf" stroke-dasharray="4 6"/>
+    <path d="M158 185a142 79 0 0 0 284 0" stroke="#b6a6c1"/>
+    <path d="M199 185a101 51 0 0 0 202 0" stroke="#9781a7"/>
+    <rect x="82" y="117" width="103" height="58" rx="7" fill="#faf8fb"/>
+    <rect x="415" y="117" width="103" height="58" rx="7" fill="#faf8fb"/>
+    <path d="M101 108c17-14 47-14 64 0M110 99c12-9 34-9 46 0M434 108c17-14 47-14 64 0M443 99c12-9 34-9 46 0" opacity=".45"/>
+    <path d="m185 163 84 48M415 163l-84 48" stroke-dasharray="4 5"/>
+    <rect x="278" y="191" width="44" height="50" rx="9" fill="#faf8fb"/>
+    <circle cx="300" cy="205" r="5"/>
+    <path d="M292 225h16M300 218v7"/>
+    <circle cx="133" cy="186" r="3" fill="#746086" stroke="none"/>
+    <circle cx="467" cy="186" r="3" fill="#746086" stroke="none"/>
+    <path d="M189 146h222" stroke="#c1b4cb" stroke-width="1" stroke-dasharray="3 6"/>
+  </g>
+  <g font-family="Arial, sans-serif" text-anchor="middle" fill="#45384f">
+    <text x="133" y="151" font-size="15" font-weight="600">UWB A</text>
+    <text x="467" y="151" font-size="15" font-weight="600">UWB B</text>
+    <text x="300" y="171" font-size="11" letter-spacing="1.4" fill="#8b799a">DUAL RANGING</text>
+    <text x="240" y="199" font-size="9" transform="rotate(30 240 199)">RANGE A</text>
+    <text x="360" y="199" font-size="9" transform="rotate(-30 360 199)">RANGE B</text>
+    <rect x="272" y="250" width="56" height="17" fill="#f1eef3"/>
+    <text x="300" y="262" font-size="10" letter-spacing="1">NEAR</text>
+    <text x="416" y="269" font-size="10" letter-spacing="1">APPROACH</text>
+    <text x="491" y="293" font-size="10" letter-spacing="1">AWAY</text>
+  </g>
+  <path d="M32 312H568" stroke="#d0c6d8"/>
+  <text x="32" y="334" font-family="Arial, sans-serif" font-size="10" letter-spacing="1.5" fill="#8b799a">RANGING · POSITION · ACCESS</text>
+  <text x="568" y="334" text-anchor="end" font-family="Arial, sans-serif" font-size="9" letter-spacing="1" fill="#8b799a">CONCEPT DIAGRAM</text>
+</svg>

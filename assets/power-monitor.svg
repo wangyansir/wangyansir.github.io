@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" role="img" aria-labelledby="title desc">
+  <title id="title">Embedded power monitoring concept</title>
+  <desc id="desc">Conceptual flow from low-voltage DC input through sensing and an ADC to an edge microcontroller. No measured performance is represented.</desc>
+  <defs>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#dee5dc" stroke-width=".65"/></pattern>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="m0 0 7 3.5L0 7" fill="none" stroke="#376453" stroke-width="1.2"/></marker>
+  </defs>
+  <rect width="600" height="360" fill="#f1f3eb"/>
+  <rect width="600" height="360" fill="url(#grid)"/>
+  <g font-family="Arial, sans-serif" fill="#253c32">
+    <text x="32" y="44" font-size="12" letter-spacing="2.5">EMBEDDED SYSTEMS</text>
+    <text x="32" y="78" font-size="28" font-weight="600" letter-spacing="-.6">Power, made visible.</text>
+    <text x="568" y="44" text-anchor="end" font-size="12" fill="#628173">01 / SENSING</text>
+  </g>
+  <g fill="none" stroke="#376453" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M65 185H168M232 185H288" marker-end="url(#arrow)"/>
+    <path d="M394 185H445" marker-end="url(#arrow)"/>
+    <circle cx="80" cy="185" r="28" fill="#f1f3eb"/>
+    <path d="M63 179h34M63 191h7m6 0h7m6 0h8"/>
+    <path d="M192 152v-13h16v13M192 218v13h16v-13"/>
+    <rect x="168" y="152" width="64" height="66" rx="14" fill="#e3ece0"/>
+    <path d="M186 170h28v30h-28zM195 164v42M205 164v42" opacity=".65"/>
+    <rect x="288" y="139" width="106" height="92" rx="6" fill="#fbfcf6"/>
+    <path d="M306 153v-14M324 153v-14M342 153v-14M360 153v-14M378 153v-14M306 231v14M324 231v14M342 231v14M360 231v14M378 231v14"/>
+    <rect x="305" y="156" width="72" height="58" rx="2" fill="#d7e6d3"/>
+    <rect x="445" y="123" width="112" height="124" rx="10" fill="#fbfcf6"/>
+    <path d="M462 209h77M462 197h12v-19h14v11h14v-33h14v22h14v-28"/>
+    <circle cx="539" cy="137" r="3" fill="#729a72" stroke="none"/>
+    <path d="M200 249v27h141v-27" stroke-dasharray="4 6" opacity=".5"/>
+  </g>
+  <g font-family="Arial, sans-serif" text-anchor="middle" fill="#253c32">
+    <text x="80" y="239" font-size="12" letter-spacing="1">DC IN</text>
+    <text x="200" y="263" font-size="12" letter-spacing="1">SENSE</text>
+    <text x="341" y="191" font-size="17" font-weight="600">MCU</text>
+    <text x="341" y="263" font-size="12" letter-spacing="1">ADC / EDGE</text>
+    <text x="501" y="231" font-size="11" letter-spacing="1.2">MONITOR</text>
+  </g>
+  <path d="M32 312H568" stroke="#bccdc0"/>
+  <text x="32" y="334" font-family="Arial, sans-serif" font-size="10" letter-spacing="1.5" fill="#658071">ACQUIRE · PROCESS · OBSERVE</text>
+  <text x="568" y="334" text-anchor="end" font-family="Arial, sans-serif" font-size="9" letter-spacing="1" fill="#658071">CONCEPT DIAGRAM</text>
+</svg>

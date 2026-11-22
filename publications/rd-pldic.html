@@ -1,0 +1,71 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RD-PLDIC for PMSM Drives · Haoyan Zhang</title>
+<meta name="description" content="A temporary q-axis current correction that combines positive load estimation, recovery-current mapping, and energy–time gating to improve simulated PMSM speed recovery after a load increase."><meta name="author" content="Haoyan Zhang"><meta property="og:type" content="website"><meta property="og:title" content="RD-PLDIC for PMSM Drives · Haoyan Zhang"><meta property="og:description" content="A temporary q-axis current correction that combines positive load estimation, recovery-current mapping, and energy–time gating to improve simulated PMSM speed recovery after a load increase."><meta property="og:image" content="https://wangyansir.github.io/assets/portrait.jpg">
+<link rel="canonical" href="https://wangyansir.github.io/publications/rd-pldic.html"><link rel="alternate" hreflang="zh-CN" href="https://wangyansir.github.io/publications/rd-pldic-zh.html"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<script>try{const s=localStorage.getItem('haoyan-theme');document.documentElement.dataset.theme=s||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch{document.documentElement.dataset.theme='light'}</script>
+<link rel="stylesheet" href="../style.css?v=4"><script src="../main.js?v=4" defer></script></head>
+<body class="project-page"><a class="skip-link" href="#main">Skip to content</a><main class="project-main" id="main"><nav class="project-utility" aria-label="Page navigation"><a href="../index.html#publications">Home</a><a class="language-switch" href="rd-pldic-zh.html" lang="zh-CN" hreflang="zh-CN" aria-label="Switch to Chinese">中文</a></nav>
+<header class="project-heading"><p class="project-kicker">PSPE 2026</p><h1>Recovery-Dynamics-Oriented Predictive Load-Disturbance Iterative Compensation for PMSM Drives</h1><p class="project-authors"><a href="../index.html">Haoyan Zhang</a>, Liang Shen</p><p class="project-affiliation">School of Transportation and Electrical Engineering<br>Dalian University of Science and Technology</p><p class="project-stage">Published · PSPE 2026</p><div class="project-resources"><a href="https://doi.org/10.1109/PSPE71359.2026.11780839" target="_blank" rel="noopener">DOI</a><a href="../assets/rd-pldic-author-manuscript.pdf" target="_blank" rel="noopener">Author manuscript</a><a href="../files/rd-pldic.bib" download>BibTeX</a></div></header>
+<figure class="project-teaser"><a class="figure-link" href="../assets/rd-pldic-speed.png" target="_blank" rel="noopener" aria-label="Open full-size figure"><img src="../assets/rd-pldic-speed.png" alt="Simulated speed recovery at 750 r/min after a 0→9 N·m load step, with predictor parameters scaled to 120% of nominal values. © 2026 IEEE." width="1200" height="700" fetchpriority="high"></a><figcaption>Simulated speed recovery at 750 r/min after a 0→9 N·m load step, with predictor parameters scaled to 120% of nominal values. © 2026 IEEE. <a class="figure-original" href="../assets/rd-pldic-speed.png" target="_blank" rel="noopener">View full-size figure ↗</a></figcaption></figure><nav class="section-index" aria-label="On this page"><a href="#abstract">Abstract</a><a href="#method">Method</a><a href="#setup">Simulation setup</a><a href="#results">Results</a><a href="#limitations">Scope and limitations</a><a href="#publication">Publication</a></nav>
+<section class="technical-section" id="abstract" aria-labelledby="abstract-title"><h2 id="abstract-title">Abstract</h2><div class="technical-content"><p>A sudden increase in load torque can cause a permanent magnet synchronous motor (PMSM) to lose speed before its speed loop raises the torque-producing current. This project studies a recovery-dynamics-oriented predictive load-disturbance iterative compensation method (RD-PLDIC) for a PID-type finite-control-set model predictive current controller.</p>
+<p>RD-PLDIC adds a temporary correction to the q-axis current reference. Positive load estimation supplies disturbance information, a recovery-current mapping translates the speed-recovery demand into current, and an energy–time gate limits the correction after the main recovery interval. The reported results show shorter recovery and lower accumulated speed error in the tested positive load-increase simulations.</p></div></section>
+<section class="technical-section" id="method" aria-labelledby="method-title"><h2 id="method-title">Method</h2><div class="technical-content"><ol>
+<li><strong>Estimate the positive load disturbance.</strong> Estimate load torque from electromagnetic torque and rotor-speed dynamics using the mechanical equation. Low-pass filtering smooths this estimate, and a positive-part operation retains the load-increase component used by the compensator.</li>
+<li><strong>Map the recovery demand to current.</strong> Combine the estimated positive load torque, positive speed error, and error-growth tendency to generate a temporary q-axis current request. This supports acceleration back to the speed reference.</li>
+<li><strong>Limit and gate the correction.</strong> Filter and saturate the current request, then apply a gate based on speed-error energy and elapsed activation time. Add the resulting compensation to the speed PI controller's q-axis reference. The PID-FCS-MPC voltage-vector enumeration remains unchanged.</li>
+</ol>
+<figure>
+<img src="../assets/rd-pldic-control.png" alt="RD-PLDIC control architecture showing positive load estimation, recovery-current mapping, and energy–time gating around a PID-FCS-MPC current loop." loading="lazy" width="1800" height="1000">
+<figcaption>Control architecture from the authors' accepted manuscript. The correction enters the q-axis reference path. © 2026 IEEE.</figcaption>
+</figure></div></section>
+<section class="technical-section" id="setup" aria-labelledby="setup-title"><h2 id="setup-title">Simulation setup</h2><div class="technical-content"><p>The main comparison uses a <strong>750 r/min</strong> speed reference and a <strong>0→9 N·m</strong> load-torque step at <strong>0.30 s</strong>. The numerical plant uses nominal parameters. The predictor uses <strong>120% of the nominal resistance, d/q-axis inductance, and permanent-magnet flux linkage</strong>, corresponding to a 20% predictor-parameter mismatch.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Simulation setup"><table>
+<caption>Main simulation parameters</caption>
+<thead><tr><th scope="col">Parameter</th><th scope="col">Value</th></tr></thead>
+<tbody>
+<tr><th scope="row">Pole pairs</th><td>4</td></tr>
+<tr><th scope="row">Stator resistance</th><td>1.5 Ω</td></tr>
+<tr><th scope="row">d/q-axis inductance</th><td>11.1 mH</td></tr>
+<tr><th scope="row">Permanent-magnet flux linkage</th><td>0.27 Wb</td></tr>
+<tr><th scope="row">DC-link voltage</th><td>200 V</td></tr>
+<tr><th scope="row">Sampling period</th><td>40 μs</td></tr>
+<tr><th scope="row">Rotor inertia</th><td>0.006 kg·m²</td></tr>
+<tr><th scope="row">Viscous damping</th><td>0.0005 N·m·s/rad</td></tr>
+<tr><th scope="row">q-axis current-reference limit</th><td>8 A</td></tr>
+<tr><th scope="row">Compensation-current limit</th><td>1.05 A</td></tr>
+</tbody>
+</table></div>
+<p>The comparison includes conventional PI control, PID-FCS-MPC, PID-FCS-MPC with disturbance-observer feed-forward compensation (DOB-FF), an ungated RD-PLDIC ablation, and the complete method. <strong>Recovery time</strong> runs from the load step to the first instant when the speed error enters <strong>±5 r/min</strong> and remains in that band for <strong>0.02 s</strong>.</p></div></section>
+<section class="technical-section" id="results" aria-labelledby="results-title"><h2 id="results-title">Results</h2><div class="technical-content"><p>The following values belong to the same main simulation case: 750 r/min, a 0→9 N·m load step, and predictor parameters at 120% of nominal values.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Results"><table>
+<caption>RD-PLDIC compared with PID-FCS-MPC</caption>
+<thead><tr><th scope="col">Metric</th><th scope="col">PID-FCS-MPC</th><th scope="col">RD-PLDIC</th></tr></thead>
+<tbody>
+<tr><th scope="row">Maximum speed drop</th><td>229.90 r/min</td><td>190.83 r/min</td></tr>
+<tr><th scope="row">Recovery time</th><td>0.2390 s</td><td>0.1654 s</td></tr>
+<tr><th scope="row">Speed IAE</th><td>17.389</td><td>11.540</td></tr>
+<tr><th scope="row">Speed ITAE</th><td>1.3305</td><td>0.6391</td></tr>
+</tbody>
+</table></div>
+<p>Against DOB-FF, the manuscript reports similar initial speed-drop suppression and reductions of <strong>29.99%</strong> in recovery time, <strong>19.35%</strong> in speed IAE, and <strong>41.07%</strong> in speed ITAE. Peak q-axis current is <strong>7.733 A</strong> for RD-PLDIC and <strong>7.721 A</strong> for DOB-FF.</p>
+<figure>
+<img src="../assets/rd-pldic-speed.png" alt="Simulated speed response after the 0.30-second load step, comparing conventional PI, PID-FCS-MPC, DOB-FF, and RD-PLDIC at a 750-r/min reference." loading="lazy" width="1800" height="1215">
+<figcaption>Speed response in the main 20% predictor-mismatch simulation. Reproduced from the authors' accepted manuscript. © 2026 IEEE.</figcaption>
+</figure>
+<p>The gate ablation examines the duration of compensation after recovery:</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Results"><table>
+<caption>Effect of the energy–time gate in the same main case</caption>
+<thead><tr><th scope="col">Metric</th><th scope="col">Ungated RD-PLDIC</th><th scope="col">Gated RD-PLDIC</th></tr></thead>
+<tbody>
+<tr><th scope="row">Recovery time</th><td>0.1517 s</td><td>0.1654 s</td></tr>
+<tr><th scope="row">Compensation duration</th><td>0.5000 s</td><td>0.0855 s</td></tr>
+<tr><th scope="row">Post-recovery compensation-current peak</th><td>0.8246 A</td><td>0.0129 A</td></tr>
+</tbody>
+</table></div>
+<p>The gate slightly increases recovery time while substantially reducing persistent compensation after the main recovery interval.</p></div></section>
+<section class="technical-section" id="limitations" aria-labelledby="limitations-title"><h2 id="limitations-title">Scope and limitations</h2><div class="technical-content"><p>Validation currently covers numerical simulations of positive load-increase recovery. The reported improvements apply to the tested models and operating conditions. They do not establish performance on a physical drive or a guaranteed actual-current bound.</p>
+<p>Hardware experiments, target-processor timing, load reduction, speed reversal, regenerative braking, measurement-noise sensitivity, and sampling-delay effects remain to be evaluated.</p></div></section>
+<section class="technical-section" id="publication" aria-labelledby="publication-title"><h2 id="publication-title">Publication</h2><div class="technical-content"><p><strong>Haoyan Zhang and Liang Shen.</strong> <cite>Recovery-Dynamics-Oriented Predictive Load-Disturbance Iterative Compensation for PMSM Drives.</cite> 2026 5th International Conference on Power System and Power Engineering (PSPE), IEEE, pp. 207–210, 2026. DOI: <a href="https://doi.org/10.1109/PSPE71359.2026.11780839" target="_blank" rel="noopener">10.1109/PSPE71359.2026.11780839</a>.</p>
+<p><strong>Published in the PSPE 2026 proceedings.</strong> Presented as a poster on September 12, 2026, in Dalian, China. The authors are affiliated with the School of Transportation and Electrical Engineering, Dalian University of Science and Technology.</p>
+<p><a href="../assets/rd-pldic-author-manuscript.pdf">Read the author's accepted manuscript (PDF)</a></p>
+<p>© 2026 IEEE. The download is the author's accepted manuscript. The <a href="https://ieeexplore.ieee.org/document/11780839/" target="_blank" rel="noopener">version of record is available on IEEE Xplore</a>.</p></div></section><footer class="project-footer"><a href="../index.html#publications">Back to Haoyan Zhang’s homepage</a><a href="#main">Back to top ↑</a></footer></main></body></html>
