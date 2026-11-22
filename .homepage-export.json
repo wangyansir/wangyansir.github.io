@@ -101,10 +101,10 @@
     "assets/zhang-haoyan-cv.pdf": "795e0ccc875ae3dad336b3c2e7e024c33958f5156479fe88226927a033059998",
     "en.html": "9868a6f6e2053cc7ae8383f66e088161f10edcf87147b7f7b9c90ecdb571e290",
     "files/rd-pldic.bib": "9cfcca4153c3b201b135144c34fb3bf977e553f6653cd9b72ea57e51d9a0bb4c",
-    "index.html": "0e88ffacd46c225caded1c716e3c24c73a8c889afa01fdf06ab5e18165079ea6",
+    "index.html": "251fa661835229e19bd0fe9d7414c6bb6bb73b65af7290baf8e0c8e1dffea973",
     "main.js": "f6b091ab56e6afb05bc5ee68fbe756f0a269ae70322fe770b32151675478c80b",
-    "projects/aiot-fertigation-zh.html": "5e44fe5ab9837595f6f1465c320dea56b8bed1b5f6f3634961498a3a6230f052",
-    "projects/aiot-fertigation.html": "ee2436245ac6c380965bd496413402ee2a2d3f9c9849351f69e141a836812b2b",
+    "projects/aiot-fertigation-zh.html": "7937b8fae01a89716701ead1e28e8a31d51b2f1322ac707c63e265d53c22765f",
+    "projects/aiot-fertigation.html": "5cc21b92073b397aa9babfd132f6ed748b5210818aa4849912bfa7c97c288aa3",
     "projects/smart-home-zh.html": "a238a761ec45ae204cb9b5fe52e0278ca183fab6ddc55e8b626ac38547a9f87e",
     "projects/smart-home.html": "89ea9d42927051cfe6a1d4d5065fb7de2b9084a851b51c0dc867372f47d65add",
     "projects/uwb-key-zh.html": "3a8eece02eae90805b5bcc8a40f3ed77cfdaf315ccc8f94515c09bebf6191114",
@@ -116,6 +116,6 @@
     "research/rail-inspection-zh.html": "99f723f30f55c157d39226534c1076a2634e0571bcd5fe478feb69a95cb952a3",
     "research/rail-inspection.html": "2e284ef79f8cf3ce92159cecc94c920c588d809fec23f6aa8737801ba504d1a1",
     "style.css": "da211e833013e389e0d4d930482a4e6e1f999a9451c79f3abfa6aed7e0529e3f",
-    "zh.html": "6345bfe8a850bef49e6b9f3ea253bd0761f93f650cb8bf5986c00e2236825276"
+    "zh.html": "40832361e345954410a3473eef15b013b72605347286764c9fb3b73872013f41"
   }
 }
