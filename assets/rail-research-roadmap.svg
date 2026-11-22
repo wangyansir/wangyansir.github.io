@@ -1,155 +1,107 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
-  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="504pt" viewBox="0 0 864 504" xmlns="http://www.w3.org/2000/svg" version="1.1">
- <title>Rail surface research: project progress</title>
- <metadata>
-  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-   <cc:Work>
-    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:title>Rail surface research: project progress</dc:title>
-    <dc:description>Original progress diagram: trained segmentation baselines; experimental three-frame motion feedback; continuous-video validation next.</dc:description>
-    <dc:format>image/svg+xml</dc:format>
-    <dc:creator>
-     <cc:Agent>
-      <dc:title>build_research_figure.py / matplotlib</dc:title>
-     </cc:Agent>
-    </dc:creator>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <defs>
-  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
- </defs>
- <g id="figure_1">
-  <g id="patch_1">
-   <path d="M 0 504 
-L 864 504 
-L 864 0 
-L 0 0 
-z
-" style="fill: #ffffff"/>
-  </g>
-  <g id="axes_1">
-   <g id="patch_2">
-    <path d="M 46.08 393.84 
-L 270.72 393.84 
-Q 280.8 393.84 280.8 383.76 
-L 280.8 123.12 
-Q 280.8 113.04 270.72 113.04 
-L 46.08 113.04 
-Q 36 113.04 36 123.12 
-L 36 383.76 
-Q 36 393.84 46.08 393.84 
-z
-" clip-path="url(#p8bc0541d00)" style="fill: #f3f7fb; stroke: #dfe5ed; stroke-width: 1.2; stroke-linejoin: miter"/>
-   </g>
-   <g id="patch_3">
-    <path d="M 319.68 393.84 
-L 544.32 393.84 
-Q 554.4 393.84 554.4 383.76 
-L 554.4 123.12 
-Q 554.4 113.04 544.32 113.04 
-L 319.68 113.04 
-Q 309.6 113.04 309.6 123.12 
-L 309.6 383.76 
-Q 309.6 393.84 319.68 393.84 
-z
-" clip-path="url(#p8bc0541d00)" style="fill: #f7f4fa; stroke: #dfe5ed; stroke-width: 1.2; stroke-linejoin: miter"/>
-   </g>
-   <g id="patch_4">
-    <path d="M 593.28 393.84 
-L 817.92 393.84 
-Q 828 393.84 828 383.76 
-L 828 123.12 
-Q 828 113.04 817.92 113.04 
-L 593.28 113.04 
-Q 583.2 113.04 583.2 123.12 
-L 583.2 383.76 
-Q 583.2 393.84 593.28 393.84 
-z
-" clip-path="url(#p8bc0541d00)" style="fill: #f2f8f6; stroke: #dfe5ed; stroke-width: 1.2; stroke-linejoin: miter"/>
-   </g>
-   <g id="line2d_1">
-    <path d="M 57.6 201.6 
-L 259.2 201.6 
-" clip-path="url(#p8bc0541d00)" style="fill: none; stroke: #dfe5ed; stroke-linecap: square"/>
-   </g>
-   <g id="line2d_2">
-    <path d="M 331.2 201.6 
-L 532.8 201.6 
-" clip-path="url(#p8bc0541d00)" style="fill: none; stroke: #dfe5ed; stroke-linecap: square"/>
-   </g>
-   <g id="line2d_3">
-    <path d="M 604.8 201.6 
-L 806.4 201.6 
-" clip-path="url(#p8bc0541d00)" style="fill: none; stroke: #dfe5ed; stroke-linecap: square"/>
-   </g>
-   <g id="text_1">
-    <text style="font-weight: 700; font-size: 30px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #223044" x="432" y="50.994141" transform="rotate(-0 432 50.994141)">Rail surface defect detection</text>
-   </g>
-   <g id="text_2">
-    <text style="font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #617084" x="432" y="82.671875" transform="rotate(-0 432 82.671875)">Project progress  |  v0.6.0</text>
-   </g>
-   <g id="text_3">
-    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #35658a" x="158.4" y="146.397188" transform="rotate(-0 158.4 146.397188)">TRAINED</text>
-   </g>
-   <g id="text_4">
-    <text style="font-weight: 700; font-size: 22px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #35658a" x="158.4" y="184.275703" transform="rotate(-0 158.4 184.275703)">Segmentation</text>
-   </g>
-   <g id="text_5">
-    <text style="font-weight: 700; font-size: 32px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #223044" x="158.4" y="253.83375" transform="rotate(-0 158.4 253.83375)">3 seeds</text>
-   </g>
-   <g id="text_6">
-    <text style="font-size: 19px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #223044" x="158.4" y="284.296289" transform="rotate(-0 158.4 284.296289)">U-Net / DeepLab</text>
-   </g>
-   <g id="text_7">
-    <text style="font-size: 15px; font-family: 'DejaVu Sans'; fill: #617084" transform="translate(75.839063 333.389063)">1,396 training images</text>
-    <text style="font-size: 15px; font-family: 'DejaVu Sans'; fill: #617084" transform="translate(75.123047 358.889063)">400 validation images</text>
-   </g>
-   <g id="text_8">
-    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #72598d" x="432" y="146.397188" transform="rotate(-0 432 146.397188)">EXPERIMENTAL</text>
-   </g>
-   <g id="text_9">
-    <text style="font-weight: 700; font-size: 22px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #72598d" x="432" y="184.275703" transform="rotate(-0 432 184.275703)">Motion feedback</text>
-   </g>
-   <g id="text_10">
-    <text style="font-weight: 700; font-size: 32px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #223044" x="432" y="253.83375" transform="rotate(-0 432 253.83375)">3-frame</text>
-   </g>
-   <g id="text_11">
-    <text style="font-size: 19px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #223044" x="432" y="284.296289" transform="rotate(-0 432 284.296289)">causal prototype</text>
-   </g>
-   <g id="text_12">
-    <text style="font-size: 15px; font-family: 'DejaVu Sans'; fill: #617084" transform="translate(360.480469 334.842188)">Historical evidence</text>
-    <text style="font-size: 15px; font-family: 'DejaVu Sans'; fill: #617084" transform="translate(367.242188 358.889063)">Benefit unproven</text>
-   </g>
-   <g id="text_13">
-    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #43786f" x="705.6" y="146.397188" transform="rotate(-0 705.6 146.397188)">NEXT STEP</text>
-   </g>
-   <g id="text_14">
-    <text style="font-weight: 700; font-size: 22px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #43786f" x="705.6" y="184.275703" transform="rotate(-0 705.6 184.275703)">Continuous video</text>
-   </g>
-   <g id="text_15">
-    <text style="font-weight: 700; font-size: 32px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #223044" x="705.6" y="253.83375" transform="rotate(-0 705.6 253.83375)">Real rail</text>
-   </g>
-   <g id="text_16">
-    <text style="font-size: 19px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #223044" x="705.6" y="284.296289" transform="rotate(-0 705.6 284.296289)">video validation</text>
-   </g>
-   <g id="text_17">
-    <text style="font-size: 15px; font-family: 'DejaVu Sans'; fill: #617084" transform="translate(631.235156 334.252734)">False alarms / recall</text>
-    <text style="font-size: 15px; font-family: 'DejaVu Sans'; fill: #617084" transform="translate(623.797266 358.889063)">Latency / deployment</text>
-   </g>
-   <g id="text_18">
-    <text style="font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #223044" x="432" y="432.556875" transform="rotate(-0 432 432.556875)">Controlled experiments; field validation is still ahead</text>
-   </g>
-   <g id="text_19">
-    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #617084" x="432" y="463.223906" transform="rotate(-0 432 463.223906)">Original diagram  |  Repository reports reviewed on 22 November 2026</text>
-   </g>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+<title id="title">Motion-aware rail-surface inspection: causal three-frame research method</title>
+<desc id="desc">Original method illustration, not photographs or measured segmentation output. Stylized rail crops at t minus two, t minus one and t feed motion alignment, warped historical defect evidence and current-frame segmentation. An experimental temporal-fusion path combines only past evidence with the current prediction to form a candidate mask. Missed detections and false-positive propagation require evaluation against a current-only baseline.</desc>
+<defs>
+ <linearGradient id="railMetal" x1="0" x2="1"><stop stop-color="#b7c7d0"/><stop offset=".25" stop-color="#edf3f6"/><stop offset=".5" stop-color="#c9d7e0"/><stop offset=".8" stop-color="#e1eaf0"/><stop offset="1" stop-color="#a9bdca"/></linearGradient>
+ <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0 0L8 4L0 8Z" fill="#6e859a"/></marker>
+ <marker id="tealArrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0 0L8 4L0 8Z" fill="#4d98a4"/></marker>
+ <marker id="purpleArrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0 0L8 4L0 8Z" fill="#8b71ac"/></marker>
+ <clipPath id="crop52"><rect x="66" y="178" width="388" height="217" rx="8"/></clipPath>
+ <clipPath id="crop492"><rect x="506" y="178" width="388" height="217" rx="8"/></clipPath>
+ <clipPath id="crop932"><rect x="946" y="178" width="388" height="217" rx="8"/></clipPath>
+</defs>
+<rect width="1400" height="900" fill="#fff"/>
+<g font-family="Arial, Helvetica, sans-serif" fill="#263a4f">
+ <text x="46" y="55" font-size="33" font-weight="700">Motion-aware rail-surface inspection</text>
+ <text x="48" y="88" font-size="18" fill="#708293">Lightweight segmentation with causal temporal evidence</text>
+ <rect x="1147" y="35" width="201" height="30" rx="15" fill="#f2edf7"/><text x="1247" y="55" text-anchor="middle" font-size="13" letter-spacing="1.2" fill="#806896">EXPERIMENTAL PATH</text>
+ <text x="54" y="146" font-size="21" font-weight="700" fill="#526e87">Observation t−2</text>
+ <text x="464" y="146" text-anchor="end" font-size="15" fill="#84919e">PAST FRAME</text>
+ <rect x="52" y="164" width="416" height="259" rx="13" fill="#fafcfd" stroke="#d6e1e8"/>
+ <g clip-path="url(#crop52)"><rect x="66" y="178" width="388" height="217" rx="8" fill="#edf1f3"/><ellipse cx="76" cy="183" rx="6" ry="3" fill="#e6ebed"/><ellipse cx="133" cy="226" rx="7" ry="4" fill="#d8e0e4"/><ellipse cx="190" cy="269" rx="8" ry="5" fill="#e6ebed"/><ellipse cx="247" cy="312" rx="9" ry="6" fill="#d8e0e4"/><ellipse cx="304" cy="355" rx="10" ry="3" fill="#e6ebed"/><ellipse cx="361" cy="203" rx="11" ry="4" fill="#d8e0e4"/><ellipse cx="418" cy="246" rx="12" ry="5" fill="#e6ebed"/><ellipse cx="108" cy="289" rx="6" ry="6" fill="#d8e0e4"/><ellipse cx="165" cy="332" rx="7" ry="3" fill="#e6ebed"/><ellipse cx="222" cy="375" rx="8" ry="4" fill="#d8e0e4"/><ellipse cx="279" cy="223" rx="9" ry="5" fill="#e6ebed"/><ellipse cx="336" cy="266" rx="10" ry="6" fill="#d8e0e4"/><ellipse cx="393" cy="309" rx="11" ry="3" fill="#e6ebed"/><ellipse cx="83" cy="352" rx="12" ry="4" fill="#d8e0e4"/><ellipse cx="140" cy="200" rx="6" ry="5" fill="#e6ebed"/><ellipse cx="197" cy="243" rx="7" ry="6" fill="#d8e0e4"/><ellipse cx="254" cy="286" rx="8" ry="3" fill="#e6ebed"/><ellipse cx="311" cy="329" rx="9" ry="4" fill="#d8e0e4"/><ellipse cx="368" cy="372" rx="10" ry="5" fill="#e6ebed"/><ellipse cx="425" cy="220" rx="11" ry="6" fill="#d8e0e4"/><ellipse cx="115" cy="263" rx="12" ry="3" fill="#e6ebed"/><ellipse cx="172" cy="306" rx="6" ry="4" fill="#d8e0e4"/><ellipse cx="229" cy="349" rx="7" ry="5" fill="#e6ebed"/><ellipse cx="286" cy="197" rx="8" ry="6" fill="#d8e0e4"/>
+ <path d="M192 177L327 177L362 405L147 405Z" fill="#b7c3cb"/>
+ <path d="M203 177L316 177L344 405L167 405Z" fill="url(#railMetal)" stroke="#93a5b2"/>
+ <path d="M218 179L191 405M304 179L330 405" stroke="#f9fbfc" stroke-width="2.5" opacity=".7"/>
+ <path d="M231 184L218 395M286 182L299 395M252 180L251 396" stroke="#a5b7c3" stroke-width="1" opacity=".6"/>
+ <g transform="translate(40 -7)">
+ <path d="M207 234L198 249L208 260L197 273L205 285L190 302L195 319M207 260L221 265L225 279M197 273L181 280L180 294" fill="none" stroke="#5b6470" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+ <path d="M207 229L193 249L201 260L189 274L197 286L183 301L189 322L201 326L203 305L212 287L205 274L215 263L205 248L214 235Z" fill="#a8d4df" opacity=".45" stroke="#438da3" stroke-width="1.2"/>
+ </g></g>
+ <text x="69" y="410" font-size="14" fill="#81909d">Illustrative rail surface and defect evidence</text>
+ <text x="494" y="146" font-size="21" font-weight="700" fill="#526e87">Observation t−1</text>
+ <text x="904" y="146" text-anchor="end" font-size="15" fill="#84919e">PAST FRAME</text>
+ <rect x="492" y="164" width="416" height="259" rx="13" fill="#fafcfd" stroke="#d6e1e8"/>
+ <g clip-path="url(#crop492)"><rect x="506" y="178" width="388" height="217" rx="8" fill="#edf1f3"/><ellipse cx="516" cy="183" rx="6" ry="3" fill="#e6ebed"/><ellipse cx="573" cy="226" rx="7" ry="4" fill="#d8e0e4"/><ellipse cx="630" cy="269" rx="8" ry="5" fill="#e6ebed"/><ellipse cx="687" cy="312" rx="9" ry="6" fill="#d8e0e4"/><ellipse cx="744" cy="355" rx="10" ry="3" fill="#e6ebed"/><ellipse cx="801" cy="203" rx="11" ry="4" fill="#d8e0e4"/><ellipse cx="858" cy="246" rx="12" ry="5" fill="#e6ebed"/><ellipse cx="548" cy="289" rx="6" ry="6" fill="#d8e0e4"/><ellipse cx="605" cy="332" rx="7" ry="3" fill="#e6ebed"/><ellipse cx="662" cy="375" rx="8" ry="4" fill="#d8e0e4"/><ellipse cx="719" cy="223" rx="9" ry="5" fill="#e6ebed"/><ellipse cx="776" cy="266" rx="10" ry="6" fill="#d8e0e4"/><ellipse cx="833" cy="309" rx="11" ry="3" fill="#e6ebed"/><ellipse cx="523" cy="352" rx="12" ry="4" fill="#d8e0e4"/><ellipse cx="580" cy="200" rx="6" ry="5" fill="#e6ebed"/><ellipse cx="637" cy="243" rx="7" ry="6" fill="#d8e0e4"/><ellipse cx="694" cy="286" rx="8" ry="3" fill="#e6ebed"/><ellipse cx="751" cy="329" rx="9" ry="4" fill="#d8e0e4"/><ellipse cx="808" cy="372" rx="10" ry="5" fill="#e6ebed"/><ellipse cx="865" cy="220" rx="11" ry="6" fill="#d8e0e4"/><ellipse cx="555" cy="263" rx="12" ry="3" fill="#e6ebed"/><ellipse cx="612" cy="306" rx="6" ry="4" fill="#d8e0e4"/><ellipse cx="669" cy="349" rx="7" ry="5" fill="#e6ebed"/><ellipse cx="726" cy="197" rx="8" ry="6" fill="#d8e0e4"/>
+ <path d="M632 177L767 177L802 405L587 405Z" fill="#b7c3cb"/>
+ <path d="M643 177L756 177L784 405L607 405Z" fill="url(#railMetal)" stroke="#93a5b2"/>
+ <path d="M658 179L631 405M744 179L770 405" stroke="#f9fbfc" stroke-width="2.5" opacity=".7"/>
+ <path d="M671 184L658 395M726 182L739 395M692 180L691 396" stroke="#a5b7c3" stroke-width="1" opacity=".6"/>
+ <g transform="translate(500 -2)">
+ <path d="M207 234L198 249L208 260L197 273L205 285L190 302L195 319M207 260L221 265L225 279M197 273L181 280L180 294" fill="none" stroke="#5b6470" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+ <path d="M207 229L193 249L201 260L189 274L197 286L183 301L189 322L201 326L203 305L212 287L205 274L215 263L205 248L214 235Z" fill="#a8d4df" opacity=".45" stroke="#438da3" stroke-width="1.2"/>
+ </g></g>
+ <text x="509" y="410" font-size="14" fill="#81909d">Illustrative rail surface and defect evidence</text>
+ <text x="934" y="146" font-size="21" font-weight="700" fill="#745e99">Observation t</text>
+ <text x="1344" y="146" text-anchor="end" font-size="15" fill="#84919e">CURRENT FRAME</text>
+ <rect x="932" y="164" width="416" height="259" rx="13" fill="#fafcfd" stroke="#cabedc"/>
+ <g clip-path="url(#crop932)"><rect x="946" y="178" width="388" height="217" rx="8" fill="#edf1f3"/><ellipse cx="956" cy="183" rx="6" ry="3" fill="#e6ebed"/><ellipse cx="1013" cy="226" rx="7" ry="4" fill="#d8e0e4"/><ellipse cx="1070" cy="269" rx="8" ry="5" fill="#e6ebed"/><ellipse cx="1127" cy="312" rx="9" ry="6" fill="#d8e0e4"/><ellipse cx="1184" cy="355" rx="10" ry="3" fill="#e6ebed"/><ellipse cx="1241" cy="203" rx="11" ry="4" fill="#d8e0e4"/><ellipse cx="1298" cy="246" rx="12" ry="5" fill="#e6ebed"/><ellipse cx="988" cy="289" rx="6" ry="6" fill="#d8e0e4"/><ellipse cx="1045" cy="332" rx="7" ry="3" fill="#e6ebed"/><ellipse cx="1102" cy="375" rx="8" ry="4" fill="#d8e0e4"/><ellipse cx="1159" cy="223" rx="9" ry="5" fill="#e6ebed"/><ellipse cx="1216" cy="266" rx="10" ry="6" fill="#d8e0e4"/><ellipse cx="1273" cy="309" rx="11" ry="3" fill="#e6ebed"/><ellipse cx="963" cy="352" rx="12" ry="4" fill="#d8e0e4"/><ellipse cx="1020" cy="200" rx="6" ry="5" fill="#e6ebed"/><ellipse cx="1077" cy="243" rx="7" ry="6" fill="#d8e0e4"/><ellipse cx="1134" cy="286" rx="8" ry="3" fill="#e6ebed"/><ellipse cx="1191" cy="329" rx="9" ry="4" fill="#d8e0e4"/><ellipse cx="1248" cy="372" rx="10" ry="5" fill="#e6ebed"/><ellipse cx="1305" cy="220" rx="11" ry="6" fill="#d8e0e4"/><ellipse cx="995" cy="263" rx="12" ry="3" fill="#e6ebed"/><ellipse cx="1052" cy="306" rx="6" ry="4" fill="#d8e0e4"/><ellipse cx="1109" cy="349" rx="7" ry="5" fill="#e6ebed"/><ellipse cx="1166" cy="197" rx="8" ry="6" fill="#d8e0e4"/>
+ <path d="M1072 177L1207 177L1242 405L1027 405Z" fill="#b7c3cb"/>
+ <path d="M1083 177L1196 177L1224 405L1047 405Z" fill="url(#railMetal)" stroke="#93a5b2"/>
+ <path d="M1098 179L1071 405M1184 179L1210 405" stroke="#f9fbfc" stroke-width="2.5" opacity=".7"/>
+ <path d="M1111 184L1098 395M1166 182L1179 395M1132 180L1131 396" stroke="#a5b7c3" stroke-width="1" opacity=".6"/>
+ <g transform="translate(932 0)">
+ <path d="M207 234L198 249L208 260L197 273L205 285L190 302L195 319M207 260L221 265L225 279M197 273L181 280L180 294" fill="none" stroke="#5b6470" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+ <path d="M207 229L193 249L201 260L189 274L197 286L183 301L189 322L201 326L203 305L212 287L205 274L215 263L205 248L214 235Z" fill="#c2afdd" opacity=".45" stroke="#8267aa" stroke-width="1.2"/>
+ </g></g>
+ <text x="949" y="410" font-size="14" fill="#81909d">Illustrative rail surface and defect evidence</text>
+ <g fill="none" stroke="#6e859a" stroke-width="2.1" stroke-linejoin="round">
+  <path d="M260 423V466H204V520" marker-end="url(#arrow)"/>
+  <path d="M700 423V466H204"/>
+  <path d="M1140 423V520" marker-end="url(#purpleArrow)" stroke="#8b71ac"/>
+  <path d="M1140 490H330V520" marker-end="url(#purpleArrow)" stroke="#a08ab9"/>
  </g>
- <defs>
-  <clipPath id="p8bc0541d00">
-   <rect x="0" y="0" width="864" height="504"/>
-  </clipPath>
- </defs>
-</svg>
+ <circle cx="204" cy="466" r="4" fill="#6e859a"/>
+ <text x="271" y="455" font-size="16" fill="#748a9d">Past observations</text>
+ <circle cx="1140" cy="490" r="4" fill="#a08ab9"/><text x="1157" y="479" font-size="16" fill="#8a75a3">Current observation</text>
+ <text x="738" y="481" text-anchor="middle" font-size="15" fill="#9a85b1">Current frame as alignment reference</text>
+ <rect x="52" y="520" width="310" height="122" rx="14" fill="#f2f7fa" stroke="#cddfe8"/>
+ <g fill="none" stroke="#86a4b8" stroke-width="1.2"><path d="M78 550H128V602H78ZM92 542H142V594H92Z"/><path d="M92 555H142M92 568H142M92 581H142M105 542V594M118 542V594M131 542V594"/></g>
+ <path d="M82 602Q67 568 83 542" fill="none" stroke="#6e859a" stroke-width="1.4" marker-end="url(#arrow)"/>
+ <text x="160" y="556" font-size="20" font-weight="700">Motion estimation</text>
+ <text x="160" y="582" font-size="20" font-weight="700">and alignment</text>
+ <text x="78" y="624" font-size="15" fill="#758c9d">Map past frames into current coordinates</text>
+ <path d="M362 581H440" fill="none" stroke="#6e859a" stroke-width="2.1" marker-end="url(#arrow)"/>
+ <text x="400" y="568" text-anchor="middle" font-size="14" fill="#8192a2">warp</text>
+ <rect x="440" y="520" width="284" height="122" rx="14" fill="#f0f8f8" stroke="#c7e0e1"/>
+ <g fill="#eef8f9" stroke="#8bb7be" stroke-width="1.2"><rect x="461" y="553" width="43" height="47" rx="5"/><rect x="470" y="546" width="43" height="47" rx="5"/><rect x="479" y="539" width="43" height="47" rx="5"/></g>
+ <path d="M502 547L495 558L501 566L492 577" fill="none" stroke="#4d98a4" stroke-width="3" stroke-linecap="round"/>
+ <text x="540" y="557" font-size="20" font-weight="700">Warped history</text>
+ <text x="540" y="584" font-size="17" fill="#5f878d">Defect evidence</text>
+ <text x="462" y="624" font-size="15" fill="#6c969c">Past predictions only · causal update</text>
+ <rect x="1016" y="520" width="332" height="122" rx="14" fill="#f6f2fa" stroke="#dbcee7"/>
+ <text x="1039" y="550" font-size="20" font-weight="700">Current-frame segmentation</text>
+ <g fill="#eee5f6" stroke="#ac95c3" stroke-width="1.2"><rect x="1043" y="570" width="37" height="43" rx="3"/><rect x="1054" y="563" width="37" height="43" rx="3"/><rect x="1065" y="556" width="37" height="43" rx="3"/></g>
+ <path d="M1114 585H1173" fill="none" stroke="#9c85b4" stroke-width="1.6" marker-end="url(#purpleArrow)"/>
+ <rect x="1187" y="562" width="56" height="48" rx="5" fill="#fff" stroke="#cfbfdf"/>
+ <path d="M1216 570L1207 580L1214 590L1204 601M1212 589L1225 594" fill="none" stroke="#9b80b8" stroke-width="5" stroke-linecap="round"/>
+ <text x="1255" y="588" font-size="17" fill="#846b9d">p<tspan baseline-shift="sub" font-size="12">t</tspan></text>
+ <path d="M582 642V745H730" fill="none" stroke="#4d98a4" stroke-width="2.4" marker-end="url(#tealArrow)"/>
+ <path d="M1182 642V666H886V686" fill="none" stroke="#8b71ac" stroke-width="2.4" marker-end="url(#purpleArrow)"/>
+ <text x="598" y="724" font-size="15" fill="#6c969c">Aligned evidence</text>
+ <rect x="730" y="686" width="310" height="128" rx="16" fill="#f5f7fb" stroke="#cbd6e5"/>
+ <text x="884" y="720" text-anchor="middle" font-size="23" font-weight="700">Temporal fusion</text>
+ <text x="884" y="746" text-anchor="middle" font-size="17" fill="#6b8197">Current prediction + history</text>
+ <rect x="804" y="765" width="162" height="28" rx="14" fill="#e7e0f0"/><text x="885" y="784" text-anchor="middle" font-size="13" letter-spacing="1" fill="#816a99">EXPERIMENTAL</text>
+ <path d="M1040 745H1121" fill="none" stroke="#6e859a" stroke-width="2.2" marker-end="url(#arrow)"/>
+ <rect x="1122" y="686" width="226" height="128" rx="15" fill="#f8fbfc" stroke="#d3e1e7"/>
+ <text x="1142" y="715" font-size="19" font-weight="700">Candidate mask</text>
+ <rect x="1143" y="730" width="61" height="63" rx="6" fill="#e7f3f5" stroke="#b9d7de"/>
+ <path d="M1175 738L1163 752L1170 762L1159 776L1164 785M1169 763L1184 770" fill="none" stroke="#5b9cac" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+ <text x="1218" y="755" font-size="15" fill="#7b909d">Current</text><text x="1218" y="776" font-size="15" fill="#7b909d">coordinates</text>
+ <text x="54" y="706" font-size="22" font-weight="700">Evaluate the trade-off</text>
+ <circle cx="63" cy="741" r="5" fill="#4d98a4"/><text x="79" y="747" font-size="18" fill="#657e90">Missed-defect recovery</text>
+ <circle cx="63" cy="774" r="5" fill="#c39065"/><text x="79" y="780" font-size="18" fill="#657e90">False-positive propagation</text>
+ <text x="54" y="813" font-size="16" fill="#8a99a7">Compare with current-only segmentation</text>
+ <path d="M48 849H1348" stroke="#e1e7ee"/>
+ <text x="48" y="876" font-size="16" fill="#7c8c9b">Original research schematic · causal three-frame processing and experimental fusion · rail crops and masks are illustrative</text>
+</g></svg>

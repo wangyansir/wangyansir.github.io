@@ -36,11 +36,13 @@ document.querySelectorAll('.language-switch').forEach(link => {
 document.querySelectorAll('[data-visual-toggle]').forEach(button => {
   let pinned = false;
   let hovered = false;
-  const caption = button.closest('figure').querySelector('figcaption');
+  const caption = button.closest('figure').querySelector('[data-visual-caption]');
+  const enlarge = button.closest('figure').querySelector('.image-caption a');
   const render = () => {
     button.classList.toggle('show-method', pinned || hovered);
     button.setAttribute('aria-pressed', String(pinned));
     caption.textContent = pinned || hovered ? button.dataset.captionMethod : button.dataset.captionOverview;
+    enlarge.href = button.querySelector(pinned || hovered ? '.visual-method' : '.visual-overview').src;
   };
   button.addEventListener('pointerenter', event => {
     if (event.pointerType === 'mouse') { hovered = true; render(); }

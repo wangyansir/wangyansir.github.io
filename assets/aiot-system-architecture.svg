@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" fill="#173747" role="img" aria-labelledby="title desc">
+<title id="title">AIoT irrigation and fertigation architecture</title><desc id="desc">Original architecture redrawn from Project Outline 3.0: soil, environment and tank sensors use a CC2530 star ZigBee network connected to STM32. UART or RS485 connects STM32 to a 4G DTU and a host with a dual-output SVR decision workflow. Threshold updates return to STM32, with ZigBee commands to a TB6612 driver and water and nutrient pumps. Automatic and manual operation share the control path.</desc>
+<defs>
+ <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#f5faf9"/><stop offset="1" stop-color="#eef3f9"/></linearGradient>
+ <linearGradient id="screen" x2="1" y2="1"><stop stop-color="#173e4c"/><stop offset="1" stop-color="#102a3b"/></linearGradient>
+ <marker id="data" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0L9 4.5 0 9Z" fill="#4389b2"/></marker>
+ <marker id="control" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0L9 4.5 0 9Z" fill="#238d78"/></marker>
+ <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#173e4c" flood-opacity=".08"/></filter>
+ <style>text{font-family:Arial,Helvetica,sans-serif}.eyebrow{font-size:20px;letter-spacing:3px;font-weight:700;fill:#438475}.title{font-size:44px;font-weight:700;letter-spacing:-1px}.subtitle{font-size:22px;fill:#58717d}.zone{font-size:22px;letter-spacing:2px;font-weight:700;fill:#4e6b79}.label{font-size:25px;font-weight:700}.small{font-size:19px;fill:#5c7480}.white{fill:#fff}.wire{fill:none;stroke:#94b7c4;stroke-width:3}.icon{fill:none;stroke:#296d74;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}</style>
+</defs>
+<rect width="1400" height="900" rx="28" fill="url(#bg)"/>
+<text x="54" y="51" class="eyebrow">AIoT IRRIGATION &amp; FERTIGATION</text>
+<text x="54" y="108" class="title">Sense. Decide. Irrigate.</text>
+<text x="54" y="146" class="subtitle">A distributed sensing network with host-assisted decisions and local execution</text>
+<path d="M55 180H1345" stroke="#cedee4"/>
+<rect x="48" y="202" width="380" height="404" rx="24" fill="#fff" opacity=".75"/>
+<rect x="476" y="202" width="369" height="404" rx="24" fill="#fff" opacity=".75"/>
+<rect x="893" y="202" width="459" height="404" rx="24" fill="#fff" opacity=".75"/>
+<text x="74" y="240" class="zone">FIELD NETWORK</text><text x="502" y="240" class="zone">EDGE CONTROLLER</text><text x="920" y="240" class="zone">HOST &amp; USER INTERFACE</text>
+<!-- Star topology: sensing endpoints report to one coordinator. -->
+<path d="M166 309L343 391M166 421H343M166 541L343 420" class="wire"/>
+<circle cx="137" cy="305" r="36" fill="#e7f4ef"/><path d="M121 318V297Q137 281 153 297V318M128 318V299M146 318V299M117 322H157" class="icon"/><text x="76" y="365" class="small">Soil · pH · EC</text>
+<circle cx="137" cy="419" r="36" fill="#eaf2f9"/><path d="M127 432V401A10 10 0 0 1 147 401V432A17 17 0 1 1 127 432M137 409V441" class="icon"/><text x="77" y="491" class="small">Air · light</text>
+<circle cx="137" cy="536" r="36" fill="#e7f4ef"/><path d="M117 520H157V551H117ZM119 536Q128 528 137 536T155 536" class="icon"/><text x="76" y="592" class="small">Tank · nutrients</text>
+<circle cx="341" cy="401" r="54" fill="#194a55" filter="url(#shadow)"/>
+<path d="M322 410Q341 391 360 410M312 396Q341 366 370 396M334 422Q341 415 348 422" fill="none" stroke="#c8f0e4" stroke-width="5" stroke-linecap="round"/>
+<text x="341" y="489" class="label" text-anchor="middle">CC2530</text><text x="341" y="519" class="small" text-anchor="middle">Star ZigBee</text>
+<!-- Acquisition and command channels are distinct. -->
+<path d="M397 370H547" fill="none" stroke="#4389b2" stroke-width="4" marker-end="url(#data)"/><text x="453" y="352" class="small" text-anchor="middle">Data</text>
+<path d="M547 415H398" fill="none" stroke="#238d78" stroke-width="4" marker-end="url(#control)"/>
+<rect x="557" y="298" width="205" height="150" rx="15" fill="url(#screen)" filter="url(#shadow)"/>
+<g stroke="#6e9caa" stroke-width="7"><path d="M580 289V274M615 289V274M650 289V274M685 289V274M720 289V274M580 457V472M615 457V472M650 457V472M685 457V472M720 457V472M548 323H532M548 359H532M548 396H532M771 323H787M771 359H787M771 396H787"/></g>
+<text x="659" y="359" class="label white" text-anchor="middle">STM32</text><text x="659" y="391" font-size="21" fill="#d1e6eb" text-anchor="middle">Levels 0 · 1 · 2 · 3</text><text x="659" y="425" font-size="18" fill="#a8cfc7" text-anchor="middle">Local rules &amp; control</text>
+<path d="M659 474V507" stroke="#4389b2" stroke-width="3" marker-end="url(#data)"/><path d="M700 507V474" stroke="#238d78" stroke-width="3" marker-end="url(#control)"/>
+<rect x="555" y="524" width="205" height="54" rx="10" fill="#e1ecf3" stroke="#bdd2dd"/><text x="658" y="559" font-size="24" font-weight="700" text-anchor="middle">4G-DTU</text><text x="528" y="508" font-size="17" fill="#5c7480">UART / RS485</text>
+<path d="M764 537H951" stroke="#4389b2" stroke-width="4" marker-end="url(#data)"/><path d="M951 569H764" stroke="#238d78" stroke-width="4" marker-end="url(#control)"/><text x="856" y="520" class="small" text-anchor="middle">4G link</text>
+<!-- Host screen is a conceptual interface, with no invented measured plot. -->
+<rect x="953" y="280" width="337" height="206" rx="13" fill="url(#screen)" filter="url(#shadow)"/>
+<rect x="968" y="295" width="307" height="173" rx="5" fill="#f4f9fa"/>
+<text x="989" y="332" font-size="24" font-weight="700">Dual-output SVR</text><path d="M990 350H1252" stroke="#d6e2e7"/>
+<g><rect x="987" y="366" width="120" height="80" rx="9" fill="#e1f1ec"/><rect x="1124" y="366" width="133" height="80" rx="9" fill="#e7edf8"/><text x="1047" y="397" font-size="18" text-anchor="middle">Watering</text><text x="1047" y="425" font-size="21" font-weight="700" text-anchor="middle">duration</text><text x="1190" y="397" font-size="18" text-anchor="middle">Next-event</text><text x="1190" y="425" font-size="21" font-weight="700" text-anchor="middle">interval</text></g>
+<path d="M1122 487V510M1072 512H1172" stroke="#173e4c" stroke-width="9" stroke-linecap="round"/>
+<text x="1122" y="552" font-size="20" text-anchor="middle">Threshold updates · Manual commands</text><text x="1122" y="587" class="small" text-anchor="middle">App / Web / Supervisory interface</text>
+<!-- Local execution through the field radio network. -->
+<path d="M341 531V688" stroke="#238d78" stroke-width="4" stroke-dasharray="9 7" marker-end="url(#control)"/><text x="361" y="649" class="small">ZigBee control</text>
+<rect x="48" y="679" width="1304" height="151" rx="24" fill="#e3f0e8"/>
+<text x="75" y="721" class="zone">EXECUTION</text><text x="75" y="755" class="small">Automatic cycles</text><text x="75" y="783" class="small">Manual intervention</text>
+<circle cx="340" cy="748" r="42" fill="#fff" stroke="#96c2b4" stroke-width="2"/><path d="M321 752Q340 732 359 752M313 739Q340 713 367 739M335 763H345" class="icon"/><text x="340" y="814" font-size="18" text-anchor="middle">Actuator node</text>
+<path d="M386 748H528" stroke="#238d78" stroke-width="4" marker-end="url(#control)"/>
+<rect x="544" y="711" width="174" height="76" rx="12" fill="#fff" stroke="#96c2b4" stroke-width="2"/><text x="631" y="743" class="label" text-anchor="middle">TB6612</text><text x="631" y="771" font-size="18" text-anchor="middle">Motor driver</text>
+<path d="M723 748H830" stroke="#238d78" stroke-width="4" marker-end="url(#control)"/><path d="M754 748V695H1058V716" fill="none" stroke="#238d78" stroke-width="3" marker-end="url(#control)"/>
+<g transform="translate(858 718)"><circle cx="28" cy="29" r="26" fill="#fff" stroke="#296d74" stroke-width="3"/><path d="M25 15L42 29 25 44Z" fill="#66a99b"/><path d="M55 29H84V9H105M13 53V64H52" class="icon"/><text x="28" y="88" font-size="18" text-anchor="middle">Water</text></g>
+<g transform="translate(1030 718)"><circle cx="28" cy="29" r="26" fill="#fff" stroke="#296d74" stroke-width="3"/><path d="M25 15L42 29 25 44Z" fill="#66a99b"/><path d="M55 29H84V9H105M13 53V64H52" class="icon"/><text x="28" y="88" font-size="18" text-anchor="middle">Nutrients</text></g>
+<path d="M1167 779H1313M1190 779V726M1245 779V712M1295 779V733" fill="none" stroke="#3e8b61" stroke-width="5" stroke-linecap="round"/><g fill="#73ad7e"><ellipse cx="1179" cy="737" rx="17" ry="8" transform="rotate(35 1179 737)"/><ellipse cx="1201" cy="722" rx="17" ry="8" transform="rotate(-35 1201 722)"/><ellipse cx="1233" cy="733" rx="17" ry="8" transform="rotate(35 1233 733)"/><ellipse cx="1257" cy="718" rx="17" ry="8" transform="rotate(-35 1257 718)"/><ellipse cx="1284" cy="744" rx="17" ry="8" transform="rotate(35 1284 744)"/><ellipse cx="1306" cy="730" rx="17" ry="8" transform="rotate(-35 1306 730)"/></g>
+<circle cx="65" cy="865" r="6" fill="#4389b2"/><text x="82" y="872" font-size="19" fill="#5c7480">Measurements</text><circle cx="267" cy="865" r="6" fill="#238d78"/><text x="284" y="872" font-size="19" fill="#5c7480">Control &amp; updates</text><text x="1342" y="872" font-size="18" fill="#6f838b" text-anchor="end">System design · redrawn from Project Outline 3.0</text>
+</svg>

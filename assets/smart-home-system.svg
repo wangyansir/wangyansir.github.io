@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" fill="#20394b" role="img" aria-labelledby="title desc">
+<title id="title">Zhi'an Home embedded load-identification architecture</title><desc id="desc">Original technical illustration based on the Siemens Cup product design and user manual. Voltage and current sampling feeds online statistics, adaptive Kalman filtering, Savitzky-Golay smoothing and multifeature extraction on STM32F103C8T6. Anomaly rules precede weighted voting for no-load, lamp and motor classes. OLED, indicators, buzzer and relay provide local action, while ESP32 connects measurements and start commands to a phone interface.</desc>
+<defs>
+ <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#f3f7fb"/><stop offset="1" stop-color="#edf5f3"/></linearGradient>
+ <linearGradient id="navy" x2="1" y2="1"><stop stop-color="#2b445c"/><stop offset="1" stop-color="#142b3e"/></linearGradient>
+ <linearGradient id="case" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#dae5e9"/></linearGradient>
+ <filter id="shadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#213d51" flood-opacity=".12"/></filter>
+ <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4 0 8Z" fill="#4b869f"/></marker>
+ <marker id="green" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4 0 8Z" fill="#2a9079"/></marker>
+ <style>text{font-family:Arial,Helvetica,sans-serif}.eyebrow{font-size:20px;letter-spacing:3px;font-weight:700;fill:#587f96}.title{font-size:44px;font-weight:700;letter-spacing:-1px}.sub{font-size:22px;fill:#657d8b}.zone{font-size:22px;font-weight:700;letter-spacing:2px}.label{font-size:25px;font-weight:700}.small{font-size:19px;fill:#657d8b}.white{fill:#fff}.icon{fill:none;stroke:#45758a;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}</style>
+</defs>
+<rect width="1400" height="900" rx="28" fill="url(#bg)"/>
+<text x="55" y="51" class="eyebrow">ZHI'AN HOME · EMBEDDED SYSTEMS</text><text x="55" y="108" class="title">From waveform to local action.</text><text x="55" y="146" class="sub">Multi-feature load identification with on-device decisions and mobile interaction</text><path d="M55 180H1345" stroke="#cedce4"/>
+<text x="75" y="232" class="zone">SENSE</text><text x="512" y="232" class="zone">INTERPRET ON DEVICE</text><text x="1012" y="232" class="zone">CONNECT &amp; RESPOND</text>
+<!-- A conceptual instrument illustration, not a photograph or a measured dashboard. -->
+<ellipse cx="235" cy="666" rx="173" ry="22" fill="#ccdce2" opacity=".45"/>
+<path d="M88 313L115 283H380L408 313V622L380 650H115L88 622Z" fill="#bccdd5" filter="url(#shadow)"/>
+<rect x="88" y="313" width="292" height="310" rx="23" fill="url(#case)" stroke="#aabfc9" stroke-width="2"/>
+<rect x="112" y="342" width="245" height="135" rx="10" fill="url(#navy)"/>
+<text x="133" y="377" font-size="17" fill="#b7d2e0">VOLTAGE / CURRENT</text><path d="M130 424H160L176 399 191 445 211 416 232 424H337" fill="none" stroke="#9ed4bd" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><text x="133" y="459" font-size="17" fill="#b7d2e0">LOAD STATE</text>
+<g fill="#bacbd2"><circle cx="124" cy="330" r="3"/><circle cx="345" cy="330" r="3"/><circle cx="124" cy="604" r="3"/><circle cx="345" cy="604" r="3"/></g>
+<rect x="121" y="514" width="86" height="58" rx="8" fill="#295a61"/><text x="164" y="549" font-size="17" fill="#d2eee4" text-anchor="middle">STM32</text><g stroke="#7d9b9b" stroke-width="4"><path d="M132 508V500M150 508V500M169 508V500M188 508V500M132 579V587M150 579V587M169 579V587M188 579V587"/></g>
+<circle cx="263" cy="535" r="15" fill="#7295a4"/><circle cx="318" cy="535" r="15" fill="#a0bdc8"/><text x="263" y="574" font-size="14" text-anchor="middle">START</text><text x="318" y="574" font-size="14" text-anchor="middle">RESET</text><g stroke="#8ba5b0" stroke-width="3"><path d="M393 340V380M393 397V437M393 454V494M393 511V551M393 568V608"/></g>
+<text x="234" y="716" class="label" text-anchor="middle">Electrical + environment</text><text x="234" y="748" class="small" text-anchor="middle">Voltage · current · temperature</text><text x="234" y="778" class="small" text-anchor="middle">Gas channel · proximity input</text>
+<path d="M418 448H460V336H497" fill="none" stroke="#4b869f" stroke-width="4" marker-end="url(#arrow)"/>
+<!-- Deterministic, inspection-friendly processing stages. -->
+<rect x="512" y="282" width="367" height="103" rx="17" fill="#fff" stroke="#c7d9e1" filter="url(#shadow)"/>
+<path d="M535 349H553L566 327 581 358 597 337H614" class="icon"/><text x="636" y="323" class="label">Condition signals</text><text x="636" y="356" class="small">Online stats · Kalman · S-G</text>
+<path d="M696 391V419" stroke="#4b869f" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="512" y="432" width="367" height="103" rx="17" fill="#fff" stroke="#c7d9e1" filter="url(#shadow)"/>
+<g fill="#91b6c6"><rect x="537" y="488" width="12" height="25" rx="3"/><rect x="557" y="471" width="12" height="42" rx="3"/><rect x="577" y="458" width="12" height="55" rx="3"/><rect x="597" y="479" width="12" height="34" rx="3"/></g>
+<text x="636" y="473" class="label">Extract evidence</text><text x="636" y="507" class="small">FFT · wavelets · DTW</text>
+<path d="M696 540V568" stroke="#4b869f" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="512" y="580" width="367" height="150" rx="17" fill="url(#navy)" filter="url(#shadow)"/>
+<path d="M539 620L561 609 583 620V641Q580 659 561 669Q542 659 539 641Z" fill="none" stroke="#a4d1bd" stroke-width="3"/><path d="M551 639L559 647 573 629" fill="none" stroke="#a4d1bd" stroke-width="3"/>
+<text x="608" y="625" class="label white">Anomaly rules first</text><text x="608" y="657" font-size="20" fill="#c1d4de">Then weighted load voting</text><path d="M539 679H853" stroke="#557284"/><text x="696" y="708" font-size="20" fill="#d8e8ee" text-anchor="middle">None · Lamp · Motor</text>
+<text x="696" y="776" class="small" text-anchor="middle">STM32F103C8T6 · 16-sample window</text>
+<!-- Local response does not depend on the mobile connection. -->
+<path d="M886 656H1000" stroke="#2a9079" stroke-width="4" marker-end="url(#green)"/>
+<rect x="1012" y="591" width="303" height="139" rx="18" fill="#e0eee7" stroke="#a9c9ba"/><g transform="translate(1037 616)"><path d="M0 23H32M16 5V40M50 2L69 23 50 44M83 15L97 2 110 15V39H83Z" class="icon"/></g><text x="1163" y="688" class="label" text-anchor="middle">Display · Alarm · Relay</text><text x="1163" y="776" class="small" text-anchor="middle">Local indication &amp; circuit control</text>
+<!-- Bidirectional status and start-command communication. -->
+<rect x="1085" y="277" width="153" height="251" rx="24" fill="url(#navy)" filter="url(#shadow)"/><rect x="1096" y="292" width="131" height="217" rx="13" fill="#f7fafb"/><rect x="1127" y="298" width="68" height="8" rx="4" fill="#2a4154"/><text x="1161" y="337" font-size="16" font-weight="700" text-anchor="middle">ZHI'AN HOME</text><g fill="#e1ecef"><rect x="1108" y="353" width="107" height="35" rx="6"/><rect x="1108" y="398" width="107" height="35" rx="6"/></g><path d="M1120 373H1135L1145 362 1157 380 1168 369H1201" fill="none" stroke="#73a498" stroke-width="3"/><text x="1161" y="421" font-size="13" text-anchor="middle">DEVICE STATUS</text><rect x="1108" y="450" width="107" height="35" rx="8" fill="#2a9079"/><text x="1161" y="473" font-size="13" fill="#fff" text-anchor="middle">START</text>
+<path d="M884 333H1070" stroke="#4b869f" stroke-width="3" marker-end="url(#arrow)"/><path d="M1070 369H889" stroke="#2a9079" stroke-width="3" marker-end="url(#green)"/><text x="978" y="310" class="small" text-anchor="middle">ESP32 link</text><text x="978" y="406" font-size="18" fill="#657d8b" text-anchor="middle">Status / Start</text><text x="1161" y="566" class="small" text-anchor="middle">Phone interface</text>
+<path d="M55 824H1345" stroke="#cedce4"/><text x="55" y="865" font-size="19" fill="#657d8b">Original system illustration · based on the submitted design and product user manual</text><text x="1344" y="865" font-size="19" fill="#587f96" text-anchor="end">CIMC SIEMENS CUP · 2026</text>
+</svg>

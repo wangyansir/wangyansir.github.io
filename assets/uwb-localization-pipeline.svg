@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+<title id="title">UWB digital key: calibrated ranging and two-anchor localization</title>
+<desc id="desc">Two-anchor ranging geometry beside the implemented signal path: raw range, affine calibration, independent Kalman filters, two-circle position and identity-aware zone output. Bearing is computed; the official forward sector is a separate task requirement.</desc>
+<defs>
+ <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#eef5fc"/><stop offset=".65" stop-color="#fbfdff"/><stop offset="1" stop-color="#edf5f5"/></linearGradient>
+ <linearGradient id="hero" x2="1" y2="1"><stop stop-color="#e8f1ff"/><stop offset="1" stop-color="#f4f9fc"/></linearGradient>
+ <linearGradient id="sector" x1="0" y1="1" x2="0" y2="0"><stop stop-color="#4c82b8" stop-opacity=".12"/><stop offset="1" stop-color="#4c82b8" stop-opacity="0"/></linearGradient>
+ <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="9" stdDeviation="14" flood-color="#142f4c" flood-opacity=".075"/></filter>
+ <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8" fill="none" stroke="#6382a0" stroke-width="1.5"/></marker>
+ <clipPath id="plot"><rect x="65" y="205" width="608" height="480" rx="18"/></clipPath>
+ <style>text{font-family:Arial,Helvetica,sans-serif;fill:#18314c}.small{font-size:20px;fill:#62778b}.label{font-size:23px;font-weight:700}.body{font-size:22px}.step{font-size:20px;font-weight:700;fill:#557999}.math{font-family:Georgia,serif;font-size:23px;fill:#294762}.line{stroke:#7891a8;fill:none;stroke-width:2}.footer text{fill:#f4f8fc}.footer text[font-size="19"]{fill:#c7d7e4}</style>
+</defs>
+<rect width="1400" height="900" rx="28" fill="url(#bg)"/>
+<text x="58" y="61" class="step" letter-spacing="2.4">UWB DIGITAL KEY</text>
+<text x="56" y="110" font-size="37" font-weight="700">Calibrate the range. Resolve the position.</text>
+<text x="58" y="143" class="small">An implementation-based view of the ranging and access-control pipeline</text>
+<rect x="45" y="174" width="650" height="527" rx="24" fill="white" filter="url(#shadow)"/>
+<text x="74" y="214" class="label">Two ranges, one forward solution</text>
+<g clip-path="url(#plot)">
+ <path d="M350 580 72 302 A393 393 0 0 1 628 302 Z" fill="url(#sector)"/>
+ <circle cx="480" cy="580" r="283.77" fill="none" stroke="#2e75a7" stroke-width="2.5" stroke-dasharray="8 7" opacity=".64"/>
+ <circle cx="220" cy="580" r="334.25" fill="none" stroke="#239c91" stroke-width="2.5" stroke-dasharray="8 7" opacity=".64"/>
+ <path d="M350 580V267" stroke="#688199" stroke-width="2" marker-end="url(#arrow)"/>
+ <path d="M112 580H616" stroke="#688199" stroke-width="2" marker-end="url(#arrow)"/>
+ <path d="M350 580 410 305" stroke="#8f9bac" stroke-width="1.6" stroke-dasharray="4 5"/>
+ <path d="M350 485 A95 95 0 0 1 370 487" stroke="#8b68aa" stroke-width="3" fill="none"/>
+ <path d="M480 580 410 305" stroke="#2e75a7" stroke-width="3"/>
+ <path d="M220 580 410 305" stroke="#239c91" stroke-width="3"/>
+ <path d="M220 619H480M220 611V627M480 611V627" stroke="#90a2b3" stroke-width="1.5"/>
+ <text x="308" y="648" class="small">Baseline L</text>
+ <rect x="308" y="550" width="84" height="59" rx="18" fill="#e5edf6" stroke="#bdcfe0"/>
+ <rect x="338" y="567" width="24" height="27" rx="6" fill="#597d9f"/>
+ <circle cx="350" cy="576" r="3.5" fill="white"/>
+ <path d="M350 579V586" stroke="white" stroke-width="2"/>
+ <circle cx="480" cy="580" r="12" fill="#2e75a7" stroke="white" stroke-width="4"/>
+ <circle cx="220" cy="580" r="12" fill="#239c91" stroke="white" stroke-width="4"/>
+ <circle cx="410" cy="305" r="21" fill="#dceafd"/>
+ <circle cx="410" cy="305" r="10" fill="#335ea0" stroke="white" stroke-width="3"/>
+ <text x="437" y="299" class="label">Key tag</text>
+ <text x="437" y="328" class="math">p = (x, y)</text>
+ <text x="453" y="446" class="math">d₁</text>
+ <text x="290" y="430" class="math">d₂</text>
+ <text x="378" y="491" class="math">α</text>
+ <text x="366" y="269" class="small">+Y · door front</text>
+ <text x="595" y="566" class="small">+X</text>
+ <text x="461" y="550" class="label" fill="#2e75a7">A₁</text>
+ <text x="202" y="550" class="label" fill="#239c91">A₂</text>
+ <text x="178" y="678" class="small">Illustrative geometry · not measurement data</text>
+</g>
+<g filter="url(#shadow)">
+ <rect x="735" y="174" width="620" height="87" rx="18" fill="#fff"/>
+ <rect x="735" y="284" width="620" height="87" rx="18" fill="#edf4ff"/>
+ <rect x="735" y="394" width="620" height="87" rx="18" fill="#edf8f6"/>
+ <rect x="735" y="504" width="620" height="87" rx="18" fill="#f2f0fa"/>
+ <rect x="735" y="614" width="620" height="87" rx="18" fill="#fff"/>
+</g>
+<g stroke="#7390a7" stroke-width="2" fill="none" marker-end="url(#arrow)"><path d="M1045 262V281"/><path d="M1045 372V391"/><path d="M1045 482V501"/><path d="M1045 592V611"/></g>
+<g>
+ <text x="763" y="211" class="label">Raw UWB ranges</text><text x="763" y="241" class="small">UART frame parsing · millimetre range fields</text>
+ <text x="763" y="321" class="label">Linear calibration</text><text x="763" y="351" class="math">dᶜ = a · dʳᵃʷ + b</text><text x="1062" y="351" class="small">gain + offset</text>
+ <text x="763" y="431" class="label">Independent Kalman filters</text><text x="763" y="461" class="small">Prediction + observation → stable d₁ and d₂</text>
+ <text x="763" y="541" class="label">Two-circle position solver</text><text x="763" y="571" class="small">Geometry checks → forward (x, y) → r and α</text>
+ <text x="763" y="651" class="label">Identity-aware zone output</text><text x="763" y="681" class="small">Valid position + matching ID → OLED / LEDs</text>
+</g>
+<rect x="45" y="731" width="1310" height="129" rx="22" fill="#173650"/>
+<path d="M473 756V836M910 756V836" stroke="#537087" stroke-width="1"/>
+<g class="footer" font-size="22" fill="#f4f8fc">
+ <text x="72" y="768" fill="#b9d8f2" font-weight="700">CALIBRATION</text>
+ <text x="72" y="800" fill="#f4f8fc">Gain and offset correct systematic bias.</text>
+ <text x="72" y="832" fill="#c7d7e4" font-size="19">Coefficients are stored in the firmware.</text>
+ <text x="500" y="768" fill="#a8dfd6" font-weight="700">FILTERING</text>
+ <text x="500" y="800" fill="#f4f8fc">K balances new data and prediction.</text>
+ <text x="500" y="832" fill="#c7d7e4" font-size="19">A separate state is maintained per range.</text>
+ <text x="938" y="768" fill="#d5c7ed" font-weight="700">POSITIONING</text>
+ <text x="938" y="800" fill="#f4f8fc">r is measured from the lock boundary.</text>
+ <text x="938" y="832" fill="#c7d7e4" font-size="19">Bearing is reported relative to door front.</text>
+</g>
+</svg>
